@@ -1,0 +1,49 @@
+datos=input("Ingresa los datos de la persona:Nombre,Apellido y Nota(número) separado por coma y cada persona separada por slash: \n")
+lista=datos.split("/")
+largo=len(lista)
+#print(lista)
+reprobado=[]
+aprobado=[]
+
+for i in range(largo):
+    lista[i]=lista[i].split(",")
+#asdasd,asdprint(lista)
+
+for i in lista:
+    if i[2]<='40':
+        reprobado.append(i)
+    elif i[2]>='40':
+        aprobado.append(i)
+
+
+aprobado_ma=0
+largo_m=len(aprobado)
+for fila in aprobado:
+    #print(fila[2])
+    aprobado_ma = int(fila[2])
+    
+for fila in range(largo): #Imprimiendo multilista como string
+    largo2=len(lista[fila])
+    cadena=''
+    print("Los Alumnos Aprobados son: ")
+    for columna in range(largo2):
+        cadena =cadena + lista[fila][columna] + " "
+        cadena2=cadena[:-3]
+    print(cadena2,"con nota",aprobado_ma)
+
+    reprobado_ma=0
+    largo_m=len(reprobado)
+    for fila in reprobado:
+        #print(fila[2])
+        reprobado_ma =int(fila[2])   
+        
+for fila in range(largo): #Imprimiendo multilista como string
+     largo2=len(lista[fila])
+     cadena=''
+     print("Los Alumnos Reprobados son: ")
+     for columna in range(largo2):
+            cadena =cadena + lista[fila][columna] + " "
+            cadena2=cadena[:-3]
+     print(cadena2,"con nota",reprobado_ma)
+
+
