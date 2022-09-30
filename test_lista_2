@@ -1,0 +1,22 @@
+datos=input("Ingresa los datos de la persona:Nombre,Apellido y Nota(número) separado por coma y cada persona separada por slash: \n")
+lista=datos.split("/")
+largo=len(lista)
+#print(lista)
+reprobado=[]
+aprobado=[]
+
+for i in range(largo):
+    lista[i]=lista[i].split(",")
+#asdasd,asdprint(lista)
+
+for i in lista:
+    if int(i[2]) <= 4:
+        reprobado.append(i)
+    else:
+        aprobado.append(i)
+
+
+print("Los estudiantes aprobados son:")
+print(aprobado)
+print("Los estudiantes reprobados son:")
+print(reprobado)
