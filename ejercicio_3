@@ -1,0 +1,43 @@
+archivo = open("C:\Curso Python\base_de_datos_de_clientes.csv",'r')
+copia= open("C:\Curso Python\Clientes_Nuevo.csv","w",encoding="latin-1")
+suma=0
+promedio=0.0
+
+
+archivo_en_lineas = archivo.readlines()
+
+numero_de_clientes = len(archivo_en_lineas)
+
+matriz_de_datos = []
+
+for linea in archivo_en_lineas:
+	linea = linea.strip()
+	fila = linea.split(";")
+	matriz_de_datos.append(fila)
+
+for fila in matriz_de_datos:
+        fecha_de_nacimiento=fila[3]
+        fecha_de_nacimiento_lista=fecha_de_nacimiento.split('-')
+        fila[3] = fecha_de_nacimiento.replace('-','')
+        edad=int(fecha_de_nacimiento_lista[0])
+        edad2=2022-edad
+        fila.append(str(edad2))
+
+
+
+for fila in matriz_de_datos:
+    valor_rut=fila[0]
+    fila[0]=valor_rut.replace('A.!--','')
+print(matriz_de_datos)
+
+for fila in range(numero_de_clientes):
+                suma=suma+int(matriz_de_datos[fila][8])
+        
+promedio=suma/numero_de_clientes
+print("El promedio de edad de clientes es",promedio)
+
+for fila in archivo:
+    copia.write(archivo)
+
+archivo.close() 
+copia.close()
