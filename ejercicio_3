@@ -37,7 +37,7 @@ promedio=suma/numero_de_clientes
 print("El promedio de edad de clientes es",promedio)
 
 for fila in archivo:
-    copia.write(archivo)
+    copia.write(fila)
 
 archivo.close() 
 copia.close()
